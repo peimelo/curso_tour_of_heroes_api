@@ -1,6 +1,6 @@
 # Tour Of Heroes API
 
-Curso de Ruby on Rails 6 como API de Heros.
+Curso de Ruby on Rails 6 como API de Heroes.
 
 Esse repositório faz parte do [Curso de Ruby on Rails 6 como API](https://www.youtube.com/watch?v=gTR6lx00Nac&list=PLqsayW8DhUmuvgOX08aXYk6Y-HGrdYg20).
 
