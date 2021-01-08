@@ -14,7 +14,7 @@ Esse repositório faz parte do [Curso de Ruby on Rails 6 como API](https://www.y
   <tr>
     <td>Rails version</td>
     <td>
-      6.1.0
+      6.1.x
     </td>
   </tr>
   <tr>
