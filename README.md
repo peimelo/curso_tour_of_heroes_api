@@ -20,7 +20,7 @@ Esse repositório faz parte do [Curso de Ruby on Rails 6 como API](https://www.y
   <tr>
     <td>Database</td>
     <td>
-      SQLite3
+      SQLite3 (dev) / PostgreSQL (prod)
     </td>
   </tr>
 </table>
@@ -30,6 +30,8 @@ Esse repositório faz parte do [Curso de Ruby on Rails 6 como API](https://www.y
 ```bash
 # clonar o projeto
 git clone https://github.com/peimelo/curso_tour_of_heroes_api.git
+
+# entrar no diretório clonado
 cd curso_tour_of_heroes_api
 
 # instalar as dependências do Ruby on Rails
@@ -47,3 +49,28 @@ rails db:migrate
 ```
 rails s
 ```
+
+## Usando a HEROES API
+
+### Inclua um Header Authorization
+
+Para todas as requisições deve-se usar um **Authorization header**, de tamanho >= 10 caracteres, para que você manipule apenas seus dados, por exemplo:
+
+```bash
+curl --request GET \
+  --url 'https://curso-tour-of-heroes-api.herokuapp.com/api/heroes' \
+  --header 'Authorization: qualquerTokenPodeSerUsado'
+```
+
+### API Endpoint
+
+Os seguintes endpoints estão disponíveis:
+
+| Endpoints                   | Uso                                                                   | Parâmetros         |
+| --------------------------- | --------------------------------------------------------------------- | ------------------ |
+| `GET /api/heroes`           | Obtém todos os heroes.                                                |                    |
+| `GET /api/heroes?term=name` | Obtém todos os heroes que no nome contenha o valor do `term` buscado. | **name**: [String] |
+| `GET /api/heroes/:id`       | Obtém os detalhes de um hero.                                         |                    |
+| `POST /api/heroes`          | Adiciona um novo hero.                                                | **name**: [String] |
+| `PUT /api/heroes/:id`       | Edita os detalhes de um hero existente.                               | **name**: [String] |
+| `DELETE /api/heroes/:id`    | Remove um hero.                                                       |                    |
