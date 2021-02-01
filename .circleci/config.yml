@@ -1,0 +1,58 @@
+version: 2.1
+orbs:
+  ruby: circleci/ruby@1.0
+
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.7.2
+    executor: ruby/default
+    steps:
+      - checkout
+      - ruby/install-deps
+
+  test: # our next job, called "test"
+    # we run "parallel job containers" to enable speeding up our tests;
+    # this splits our tests across multiple containers.
+    parallelism: 3
+    # here we set TWO docker images.
+    docker:
+      - image: circleci/ruby:2.7.2 # this is our primary docker image, where step commands run.
+      - image: circleci/postgres:9.5-alpine
+        environment: # add POSTGRES environment variables.
+          POSTGRES_USER: circleci-demo-ruby
+          POSTGRES_DB: curso_tour_of_heroes_api_test
+          POSTGRES_PASSWORD: ''
+    # environment variables specific to Ruby/Rails, applied to the primary container.
+    environment:
+      BUNDLE_JOBS: '3'
+      BUNDLE_RETRY: '3'
+      PGHOST: 127.0.0.1
+      PGUSER: circleci-demo-ruby
+      PGPASSWORD: ''
+      RAILS_ENV: test
+    # A series of steps to run, some are similar to those in "build".
+    steps:
+      - checkout
+      - ruby/install-deps
+      # Here we make sure that the secondary container boots
+      # up before we run operations on the database.
+      - run:
+          name: Wait for DB
+          command: dockerize -wait tcp://localhost:5432 -timeout 1m
+      - run:
+          name: Database setup
+          command: bundle exec rails db:schema:load --trace
+      - run:
+          name: Run Rspec
+          command: RAILS_ENV=test bundle exec rspec --format progress $TEST_FILES
+
+# We use workflows to orchestrate the jobs that we declared above.
+workflows:
+  version: 2
+  build_and_test: # The name of our workflow is "build_and_test"
+    jobs: # The list of jobs we run as part of this workflow.
+      - build # Run build first.
+      - test: # Then run test,
+          requires: # Test requires that build passes for it to run.
+            - build # Finally, run the build job.
