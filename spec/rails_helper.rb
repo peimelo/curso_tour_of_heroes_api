@@ -1,5 +1,10 @@
 require 'simplecov'
-SimpleCov.start
+SimpleCov.start do
+  add_group 'Config', 'config'
+  add_group 'Controllers', 'app/controllers'
+  add_group 'Models', 'app/models'
+  add_group 'Specs', 'spec'
+end
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
