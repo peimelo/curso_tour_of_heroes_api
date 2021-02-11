@@ -42,12 +42,21 @@ rails db:create
 
 # criar as tabelas
 rails db:migrate
-```
 
-## Rodar o projeto
-
-```
+# rodar o projeto
 rails s
+```
+
+O backend fica disponível em `http://localhost:3000`.
+
+## Testes
+
+[![CircleCI](https://circleci.com/gh/peimelo/curso_tour_of_heroes_api.svg?style=svg)](https://circleci.com/gh/peimelo/curso_tour_of_heroes_api)
+
+Para rodar os testes:
+
+```bash
+rspec
 ```
 
 ## Usando a HEROES API
@@ -66,11 +75,11 @@ curl --request GET \
 
 Os seguintes endpoints estão disponíveis:
 
-| Endpoints                   | Uso                                                                   | Parâmetros         |
-| --------------------------- | --------------------------------------------------------------------- | ------------------ |
-| `GET /api/heroes`           | Obtém todos os heroes.                                                |                    |
-| `GET /api/heroes?term=name` | Obtém todos os heroes que no nome contenha o valor do `term` buscado. | **name**: [String] |
-| `GET /api/heroes/:id`       | Obtém os detalhes de um hero.                                         |                    |
-| `POST /api/heroes`          | Adiciona um novo hero.                                                | **name**: [String] |
-| `PUT /api/heroes/:id`       | Edita os detalhes de um hero existente.                               | **name**: [String] |
-| `DELETE /api/heroes/:id`    | Remove um hero.                                                       |                    |
+| Endpoints                   | Uso                                                                     | Parâmetros         |
+| --------------------------- | ----------------------------------------------------------------------- | ------------------ |
+| `GET /api/heroes`           | Obtém todos os heroes.                                                  |                    |
+| `GET /api/heroes?name=term` | Obtém todos os heroes que no `name` contenha o valor do `term` buscado. | **term**: [String] |
+| `GET /api/heroes/:id`       | Obtém os detalhes de um hero.                                           |                    |
+| `POST /api/heroes`          | Adiciona um novo hero.                                                  | **name**: [String] |
+| `PUT /api/heroes/:id`       | Edita os detalhes de um hero existente.                                 | **name**: [String] |
+| `DELETE /api/heroes/:id`    | Remove um hero.                                                         |                    |
