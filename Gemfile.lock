@@ -225,7 +225,7 @@ DEPENDENCIES
   pg (~> 1.2)
   puma (~> 5.0)
   rack-cors (~> 1.1)
-  rails (~> 6.1.0)
+  rails (~> 6.1.2, >= 6.1.2.1)
   rspec-rails (~> 4.0)
   rubocop
   shoulda-matchers (~> 4.5)
