@@ -1,8 +1,8 @@
 # Tour Of Heroes API
 
-Curso de Ruby on Rails 6 como API de Heroes.
+Ruby on Rails 6 course as an API creating a Heroes CRUD.
 
-Esse repositório faz parte do [Curso de Ruby on Rails 6 como API](https://www.youtube.com/watch?v=gTR6lx00Nac&list=PLqsayW8DhUmuvgOX08aXYk6Y-HGrdYg20).
+This repository is part of the [Curso de Ruby on Rails 6 como API](https://www.youtube.com/watch?v=gTR6lx00Nac&list=PLqsayW8DhUmuvgOX08aXYk6Y-HGrdYg20) on YouTube.
 
 <table>
   <tr>
@@ -25,61 +25,61 @@ Esse repositório faz parte do [Curso de Ruby on Rails 6 como API](https://www.y
   </tr>
 </table>
 
-## Configurações iniciais para rodar o projeto
+## Initial settings to run the project
 
 ```bash
-# clonar o projeto
+# clone the project
 git clone https://github.com/peimelo/curso_tour_of_heroes_api.git
 
-# entrar no diretório clonado
+# enter the cloned directory
 cd curso_tour_of_heroes_api
 
-# instalar as dependências do Ruby on Rails
+# install Ruby on Rails dependencies
 bundle install
 
-# criar os bancos de dados de development e test
+# create the development and test databases
 rails db:create
 
-# criar as tabelas
+# create the tables
 rails db:migrate
 
-# rodar o projeto
+# run the project
 rails s
 ```
 
-O backend fica disponível em `http://localhost:3000`.
+The backend is available at `http://localhost:3000`.
 
-## Testes
+## Tests
 
 [![CircleCI](https://circleci.com/gh/peimelo/curso_tour_of_heroes_api.svg?style=svg)](https://circleci.com/gh/peimelo/curso_tour_of_heroes_api)
 
-Para rodar os testes:
+To run the tests:
 
 ```bash
 rspec
 ```
 
-## Usando a HEROES API
+## Using the HEROES API
 
-### Inclua um Header Authorization
+### Include a Header Authorization
 
-Para todas as requisições deve-se usar um **Authorization header**, de tamanho >= 10 caracteres, para que você manipule apenas seus dados, por exemplo:
+For all requests, use an **Authorization header**, of size> = 10 characters, so that you can only manipulate your data, for example:
 
 ```bash
 curl --request GET \
   --url 'https://curso-tour-of-heroes-api.herokuapp.com/api/heroes' \
-  --header 'Authorization: qualquerTokenPodeSerUsado'
+  --header 'Authorization: anyTokenCanBeUsed'
 ```
 
 ### API Endpoint
 
-Os seguintes endpoints estão disponíveis:
+The following endpoints are available:
 
-| Endpoints                   | Uso                                                                     | Parâmetros         |
-| --------------------------- | ----------------------------------------------------------------------- | ------------------ |
-| `GET /api/heroes`           | Obtém todos os heroes.                                                  |                    |
-| `GET /api/heroes?name=term` | Obtém todos os heroes que no `name` contenha o valor do `term` buscado. | **term**: [String] |
-| `GET /api/heroes/:id`       | Obtém os detalhes de um hero.                                           |                    |
-| `POST /api/heroes`          | Adiciona um novo hero.                                                  | **name**: [String] |
-| `PUT /api/heroes/:id`       | Edita os detalhes de um hero existente.                                 | **name**: [String] |
-| `DELETE /api/heroes/:id`    | Remove um hero.                                                         |                    |
+| Endpoints                   | Usage                                     | Params             |
+| --------------------------- | ----------------------------------------- | ------------------ |
+| `GET /api/heroes`           | Get all of the heroes.                    |                    |
+| `GET /api/heroes?name=term` | Get all heroes with `name` like a `term`. | **term**: [String] |
+| `GET /api/heroes/:id`       | Get the details of a single hero.         |                    |
+| `POST /api/heroes`          | Add a new hero.                           | **name**: [String] |
+| `PUT /api/heroes/:id`       | Edit the details of an existing hero.     | **name**: [String] |
+| `DELETE /api/heroes/:id`    | Remove the hero.                          |                    |
