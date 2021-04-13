@@ -3,6 +3,7 @@ SimpleCov.start do
   add_group 'Config', 'config'
   add_group 'Controllers', 'app/controllers'
   add_group 'Models', 'app/models'
+  add_group 'Serializers', 'app/serializers'
   add_group 'Specs', 'spec'
 end
 
