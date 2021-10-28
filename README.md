@@ -35,7 +35,7 @@ git clone https://github.com/peimelo/curso_tour_of_heroes_api.git
 cd curso_tour_of_heroes_api
 
 # install Ruby on Rails dependencies
-bundle install
+bundle install --without production
 
 # create the development and test databases
 rails db:create
@@ -63,7 +63,7 @@ rspec
 
 ### Include a Header Authorization
 
-For all requests, use an **Authorization header**, of size> = 10 characters, so that you can only manipulate your data, for example:
+For all requests, use an **Authorization header**, of size >= 10 characters, so that you can only manipulate your data, for example:
 
 ```bash
 curl --request GET \
@@ -83,3 +83,32 @@ The following endpoints are available:
 | `POST /api/heroes`          | Add a new hero.                           | **name**: [String] |
 | `PUT /api/heroes/:id`       | Edit the details of an existing hero.     | **name**: [String] |
 | `DELETE /api/heroes/:id`    | Remove the hero.                          |                    |
+
+### Using Insomnia to test the API
+
+If you want to import the above requests into [Insomnia](https://insomnia.rest/download), use the file `Insomnia.json` at the root of this project.
+
+It will be necessary to install the plugin [insomnia-plugin-dotenv](https://insomnia.rest/plugins/insomnia-plugin-dotenv).
+
+Create an environment variable file at the root of the project to add sensitive data:
+
+```bash
+touch .env.development
+```
+
+Add the contents below to the file above:
+
+```bash
+token=anyTokenCanBeUsed
+```
+
+In Insomnia, go to `Manage Environments` and set the `envFilePath` value to the file path `.env.development`:
+
+```json
+{
+  "baseUrl": "http://localhost:3000/api",
+  "envFilePath": "/path/to/file/your_repo/.env.development"
+}
+```
+
+Any `.env.*` file is being ignored by this project's GIT.

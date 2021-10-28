@@ -31,3 +31,6 @@
 /config/master.key
 
 /coverage
+
+# Ignore environment files
+.env.*

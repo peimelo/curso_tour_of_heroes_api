@@ -1,0 +1,248 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2021-10-28T17:24:34.559Z",
+  "__export_source": "insomnia.desktop.app:v2021.6.0",
+  "resources": [
+    {
+      "_id": "req_c61c1acaa8024487b43b11b15d6f726b",
+      "parentId": "wrk_5e5783f5a2534436a631a3e956ab0406",
+      "modified": 1635441372932,
+      "created": 1612209525532,
+      "url": "{{ _.baseUrl }}/heroes",
+      "name": "Create",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Thor\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_8b14cc777cbe4fe7afb12a690ec4b786"
+        },
+        {
+          "name": "Authorization",
+          "value": "{% dotenv _.envFilePath, 'token' %}",
+          "description": "",
+          "id": "pair_e283c029ecbf440b88422c9fd4432394"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1612209525532,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "wrk_5e5783f5a2534436a631a3e956ab0406",
+      "parentId": null,
+      "modified": 1612209234309,
+      "created": 1612209234309,
+      "name": "Curso Tour of Heroes API",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_001d09dddf23461b80d9641721244e9b",
+      "parentId": "wrk_5e5783f5a2534436a631a3e956ab0406",
+      "modified": 1635441659749,
+      "created": 1612209251989,
+      "url": "{{ _.baseUrl }}/heroes",
+      "name": "Read All",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "name",
+          "value": "wolverine",
+          "description": "",
+          "id": "pair_9045519e551d4ee1ad51415fa6210cae",
+          "disabled": true
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "{% dotenv _.envFilePath, 'token' %}",
+          "description": "",
+          "id": "pair_4450db58ac4c43518674f1690df06a42"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1612209251989,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_fa14a5c5aa5a40ad96770a5af859ebab",
+      "parentId": "wrk_5e5783f5a2534436a631a3e956ab0406",
+      "modified": 1635441378730,
+      "created": 1612209461916,
+      "url": "{{ _.baseUrl }}/heroes/1",
+      "name": "Read One",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "{% dotenv _.envFilePath, 'token' %}",
+          "description": "",
+          "id": "pair_4450db58ac4c43518674f1690df06a42"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1612209251939,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_62b8c7c0194d48e29c83fb65b3136d60",
+      "parentId": "wrk_5e5783f5a2534436a631a3e956ab0406",
+      "modified": 1635441380362,
+      "created": 1612209641039,
+      "url": "{{ _.baseUrl }}/heroes/1",
+      "name": "Update",
+      "description": "",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Hulk\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_8b14cc777cbe4fe7afb12a690ec4b786"
+        },
+        {
+          "name": "Authorization",
+          "value": "{% dotenv _.envFilePath, 'token' %}",
+          "description": "",
+          "id": "pair_e283c029ecbf440b88422c9fd4432394"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1612209251889,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_caabf9e0aa0d492f8ed3b821c99574ef",
+      "parentId": "wrk_5e5783f5a2534436a631a3e956ab0406",
+      "modified": 1635441382389,
+      "created": 1612209690390,
+      "url": "{{ _.baseUrl }}/heroes/1",
+      "name": "Delete",
+      "description": "",
+      "method": "DELETE",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Hulk\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "{% dotenv _.envFilePath, 'token' %}",
+          "description": "",
+          "id": "pair_e283c029ecbf440b88422c9fd4432394"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1612209251839,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_3955fa671f9e9688d11982d29c2229a49ab61224",
+      "parentId": "wrk_5e5783f5a2534436a631a3e956ab0406",
+      "modified": 1635441633228,
+      "created": 1612209234340,
+      "name": "Base Environment",
+      "data": {},
+      "dataPropertyOrder": {},
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1612209234340,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_3955fa671f9e9688d11982d29c2229a49ab61224",
+      "parentId": "wrk_5e5783f5a2534436a631a3e956ab0406",
+      "modified": 1612209234342,
+      "created": 1612209234342,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_854097ad59f142ec91b39276969f2388",
+      "parentId": "wrk_5e5783f5a2534436a631a3e956ab0406",
+      "modified": 1612209234316,
+      "created": 1612209234316,
+      "fileName": "Curso Tour of Heroes API",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    },
+    {
+      "_id": "env_43ff9ce82e2a4869abe3cce42d911fa2",
+      "parentId": "env_3955fa671f9e9688d11982d29c2229a49ab61224",
+      "modified": 1635441632647,
+      "created": 1612209311622,
+      "name": "dev",
+      "data": {
+        "baseUrl": "http://localhost:3000/api",
+        "envFilePath": "/Users/melo/Projects/Rails/curso_tour_of_heroes_api/.env.development"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "baseUrl",
+          "envFilePath"
+        ]
+      },
+      "color": "#529dff",
+      "isPrivate": false,
+      "metaSortKey": 1612209311622,
+      "_type": "environment"
+    }
+  ]
+}
