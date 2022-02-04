@@ -23,7 +23,7 @@ class Api::HeroesController < ApplicationController
     if @hero.save
       render json: @hero, status: :created, location: api_hero_url(@hero)
     else
-      render json: @hero.errors, status: :unprocessable_entity
+      render json: @hero.errors.full_messages, status: :unprocessable_entity
     end
   end
 

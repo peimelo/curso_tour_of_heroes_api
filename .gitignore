@@ -34,3 +34,5 @@
 
 # Ignore environment files
 .env.*
+
+.idea/
